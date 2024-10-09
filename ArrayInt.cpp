@@ -20,6 +20,13 @@ ArrayInt::~ArrayInt() { delete[] theArray; }
 
 // create new array of newSize and copy to it
 void ArrayInt::resize(int newSize) {
+    int *temp = new int[newSize];  // creates new array in a pointer called temp
+    for (int i =0; i<size; i++) {
+        temp[i] = this->theArray[i]; //copies all data from the Array into temp
+    }
+    delete[] this ->theArray;//delete old array
+    this->theArray = temp; //copies pointers
+    this ->size = newSize; //changes array size
     return;
 }
 

@@ -13,8 +13,8 @@
 #include <limits.h>
 #include <stdexcept>
 
-#define TEST_CONSTRUCTOR
-//#define TEST_APPEND
+//#define TEST_CONSTRUCTOR
+#define TEST_APPEND
 
 //#define TEST_MAKE_ROOM
 

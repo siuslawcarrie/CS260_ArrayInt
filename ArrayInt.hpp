@@ -16,6 +16,7 @@
 #ifndef ArrayInt_hpp
 #define ArrayInt_hpp
 #include <string>
+#include <stdexcept>
 
 class ArrayInt {
 private:

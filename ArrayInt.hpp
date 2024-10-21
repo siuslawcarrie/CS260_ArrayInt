@@ -24,7 +24,7 @@ private:
     int size;
     int lastIndex;
     int * theArray;
-
+    int helperLargest(); //helper function to find the index of the largest value
 public:
     // constructor and destructor
     ArrayInt(int size = SIZE);

@@ -14,7 +14,7 @@
 #include <stdexcept>
 
 //#define TEST_CONSTRUCTOR
-#define TEST_APPEND
+//#define TEST_APPEND
 
 //#define TEST_MAKE_ROOM
 
@@ -24,7 +24,7 @@
 
 //#define TEST_FIND_LARGEST
 
-//#define TEST_SET_GET
+#define TEST_SET_GET
 //#define TEST_MIX
 
 //#define TEST_THINK

@@ -24,10 +24,10 @@
 
 //#define TEST_FIND_LARGEST
 
-#define TEST_SET_GET
-//#define TEST_MIX
+//#define TEST_SET_GET
+#define TEST_MIX
 
-//#define TEST_THINK
+#define TEST_THINK
 
 int main(int argc, const char *argv[]) {
 #ifdef TEST_CONSTRUCTOR

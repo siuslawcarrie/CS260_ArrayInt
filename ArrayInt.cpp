@@ -188,23 +188,66 @@ int ArrayInt::getAt(int index) {
         throw std::out_of_range("Attempt to read at invalid location.");
     } else {
 
+        value = theArray[index];
+
     }
-    return 7;
+    return value;
 }
 
 // index into array to set a value
+/*void setAt(int index, int value) – store value at index location. If index is less than 0 or
+greater than or equal to the array size, throw an exception. (For C++ and C#, use the
+message: Attempt to store at invalid location.) Allow any index between 0 and the size
+of the array. Note that if index is greater than the next available location, there will be a
+        gap in the array with unknown values. The driver will print unknown for these values,
+        but your program will print random values or zero, depending on which language you’re
+using. If index is greater than the next available location, then update the next available
+        location to be just after index to make sure any future appends will not overwrite this
+        value. Calling this function might change a value that was previously set, or it might store
+        the value at an index much higher than the current next available location.*/
+
 void ArrayInt::setAt(int index, int value) {
     if ((index < 0) or (index >= size)) {
         throw std::out_of_range("Attempt to store at invalid location.");
-    } else {
-
     }
+    if (index > lastIndex) {
+        lastIndex = index + 1;
+    }
+    theArray[index] = value;
+
 }
+
 
 //        return;
 
 
 // use append, findLargest, and findRemove to arrange values in descending order
+/*Given a set of numbers, use your base lab array methods to list the numbers from largest to
+smallest. More specifically, add a method to your ArrayInt class called thinkSolve which takes an
+unordered array of integers and the number of integers in the array. It stores the integers sent via
+ the array argument in the object’s array, puts them in descending order in the array, and returns
+nothing. */
 void ArrayInt::solveThink(int *values, int numValues) {
-    return;
+//    int temp = new int *tempArray;//create a temp array
+    //values is the original array
+    //loop based on size of array/numValues
+    //findlargest, save to a variable, pass variable to append
+//    return;
+    int *temp = theArray;
+    int largest, countValues = numValues, countTemp = lastIndex;
+    for (int i = 0; i < numValues; i++) {
+        theArray = values;
+        lastIndex = countTemp;
+        largest = findLargest();
+        findRemove(largest);
+        theArray = temp;
+        countValues = lastIndex;
+        lastIndex = countTemp;
+        append(largest);
+        countTemp = lastIndex;
+    }
+    theArray = values;
+    values = temp;
+
+
 }

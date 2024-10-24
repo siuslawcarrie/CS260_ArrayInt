@@ -233,21 +233,30 @@ void ArrayInt::solveThink(int *values, int numValues) {
     //loop based on size of array/numValues
     //findlargest, save to a variable, pass variable to append
 //    return;
-    int *temp = theArray;
-    int largest, countValues = numValues, countTemp = lastIndex;
+//    int *temp = theArray;
+ArrayInt tempArray;
+for(int i = 0; i < numValues; i++){
+    tempArray.append(values[i]);//puts values into temp array
+    }
+    for(int i = 0; i < numValues; i++){
+        int largest = tempArray.findLargest();//calling findlargest on tempArray
+        tempArray.findRemove(largest);
+        append(largest);
+    }/*
+
+int largest, countValues = numValues, countTemp = lastIndex;
     for (int i = 0; i < numValues; i++) {
         theArray = values;
         lastIndex = countTemp;
-        largest = findLargest();
-        findRemove(largest);
+
         theArray = temp;
         countValues = lastIndex;
         lastIndex = countTemp;
         append(largest);
         countTemp = lastIndex;
     }
-    theArray = values;
-    values = temp;
+    theArray = values;*/
+//    values = temp;
 
 
 }
